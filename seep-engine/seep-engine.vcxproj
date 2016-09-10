@@ -122,10 +122,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Seep.h" />
+    <ClInclude Include="src\ui\StateStack.h" />
     <ClInclude Include="src\ui\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\game\Game.cpp" />
+    <ClCompile Include="src\ui\StateStack.cpp" />
     <ClCompile Include="src\ui\Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
