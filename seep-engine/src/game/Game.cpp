@@ -2,10 +2,11 @@
 
 int main()
 {
-    Window _window("Game", 1280, 720);
+    Window window("Game", 1280, 720);
+    //state.changeState(...);
 
-    while (!_window.shouldClose())
+    while (!window.shouldClose())
     {
-        _window.update();
+        window.update();
     }
 }

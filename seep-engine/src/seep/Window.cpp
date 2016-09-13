@@ -2,11 +2,11 @@
 
 Window::Window(const char *title, int width, int height)
 {
-    _title = title;
-    _width = width;
-    _height = height;
+    m_title = title;
+    m_width = width;
+    m_height = height;
 
-    if (!_init())
+    if (!initGraphics())
         glfwTerminate();
 }
 
@@ -15,33 +15,33 @@ Window::~Window()
     glfwTerminate();
 }
 
-bool Window::_init()
+bool Window::initGraphics()
 {
     if (!glfwInit())
     {
         return false;
     }
 
-    _window = glfwCreateWindow(_width, _height, _title, NULL, NULL);
+    m_window = glfwCreateWindow(m_width, m_height, m_title, NULL, NULL);
 
-    if (!_window)
+    if (!m_window)
     {
         glfwTerminate();
         return false;
     }
 
-    glfwMakeContextCurrent(_window);
+    glfwMakeContextCurrent(m_window);
 
     return true;
 }
 
 void Window::update()
 {
-    glfwSwapBuffers(_window);
+    glfwSwapBuffers(m_window);
     glfwPollEvents();
 }
 
 bool Window::shouldClose()
 {
-    return glfwWindowShouldClose(_window);
+    return glfwWindowShouldClose(m_window);
 }

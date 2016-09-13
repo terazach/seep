@@ -11,7 +11,11 @@ private:
 public:
     void changeState(StateStack* state);
     void pushState(StateStack* state);
-    void popState(); 
+    void popState();
+
+    void handleEvents();
+    void update();
+    void draw();
 };
 
 #endif
